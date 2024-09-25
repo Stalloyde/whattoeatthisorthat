@@ -2,12 +2,26 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  border-right: 1px solid black;
+}
+
+.description > p {
+  width: 85%;
 }
 
 .container {
   display: flex;
   gap: 50px;
+  justify-content:end;
   align-items: center;
 }
 
