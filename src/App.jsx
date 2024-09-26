@@ -8,7 +8,7 @@ const array = [
   'Italian',
   'Chinese',
   'Malay',
-  'Indian',
+  'Southern/Northern Indian',
   'Thai',
   'Turkish',
   'Indonesian',
@@ -36,13 +36,37 @@ function App() {
   const [cuisineB, setCuisineB] = useState(
     cuisines[Math.floor(Math.random() * (cuisines.length - 1)) + 1],
   );
-  const [endGame, setEndGame] = useState(false);
+  const [userLocation, setUserLocation] = useState(null);
+  const [gameOver, setGameOver] = useState(false);
+
+  function getUserLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          setUserLocation({ latitude, longitude });
+        },
+        (error) => {
+          console.error('Error getting user location:', error);
+        },
+      );
+    } else {
+      console.error('Geolocation is not supported by this browser.');
+    }
+  }
+  getUserLocation();
 
   function removeTarget(e) {
     const target = cuisines.findIndex(
       (elem) => elem === e.target.dataset.remove,
     );
     cuisines.splice(target, 1);
+  }
+
+  function redirectGoogleMaps(cuisine) {
+    window.open(
+      `https://www.google.com/maps/search/?api=1&query=${cuisine}&location=${userLocation.latitude},${userLocation.longitude}&radius=10000`,
+    );
   }
 
   function checkGameOver() {
@@ -54,7 +78,8 @@ function App() {
       );
     } else {
       setCuisineA(cuisines[0]);
-      setEndGame(true);
+      setGameOver(true);
+      redirectGoogleMaps(cuisines[0]);
     }
   }
 
@@ -65,8 +90,13 @@ function App() {
 
   return (
     <>
-      {endGame ? (
-        <button>{cuisineA}</button>
+      {gameOver ? (
+        <div className='gameOver'>
+          <div>
+            <h1>Winning Cuisine: {cuisineA}</h1>
+          </div>
+          <p>Refresh page to restart</p>
+        </div>
       ) : (
         <>
           <div className='description'>
