@@ -108,9 +108,9 @@ function App() {
             <h2 className="text-xl font-bold">How it works:</h2>
             <p className="py-5">
               Simply pick the cuisine that you prefer over the other. The app
-              harnesses the power of elimination, filtering out undesirable
-              options until a winning cuisine is determined. A list of nearby
-              eateries will be generated based on the winning option.
+              eliminates undesirable options until a winning cuisine is
+              determined. The app redirects to Google Maps and displays relevant
+              eateries near your location.
             </p>
           </div>
           <div className="flex items-center gap-5 p-10">
