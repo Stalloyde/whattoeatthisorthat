@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -31,10 +32,12 @@
     "vite": "^5.4.1"
   },
   "prettier": {
-      "trailingComma": "es5",
-      "tabWidth": 2,
-      "semi": true,
-      "singleQuote": true,
-      "plugins": ["prettier-plugin-tailwindcss"]
-    }
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true,
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ]
+  }
 }
