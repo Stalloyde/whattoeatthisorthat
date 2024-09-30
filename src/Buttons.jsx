@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import './App.css';
 
 Buttons.propTypes = {
-  shuffleArray: PropTypes.func.isRequired, // shuffleArray is a required function
-  cuisines: PropTypes.arrayOf(PropTypes.string).isRequired, // cuisines is a required array of strings
-  cuisineA: PropTypes.string.isRequired, // cuisineA is a required string
-  setCuisineA: PropTypes.func.isRequired, // setCuisineA is a required function
-  cuisineB: PropTypes.string.isRequired, // cuisineB is a required string
-  setCuisineB: PropTypes.func.isRequired, // setCuisineB is a required function
-  removeTarget: PropTypes.func.isRequired, // removeTarget is a required function
-  setGameOver: PropTypes.func.isRequired, // setGameOver is a required function
+  shuffleArray: PropTypes.func.isRequired,
+  cuisines: PropTypes.arrayOf(PropTypes.string).isRequired,
+  cuisineA: PropTypes.string.isRequired,
+  setCuisineA: PropTypes.func.isRequired,
+  cuisineB: PropTypes.string.isRequired,
+  setCuisineB: PropTypes.func.isRequired,
+  removeTarget: PropTypes.func.isRequired,
+  setGameOver: PropTypes.func.isRequired,
 };
 
 function Buttons({
@@ -46,7 +46,7 @@ function Buttons({
 
   function redirectGoogleMaps(cuisine) {
     window.open(
-      `https://www.google.com/maps/search/?api=1&query=${cuisine}&location=${userLocation.latitude},${userLocation.longitude}&radius=10000`
+      `https://www.google.com/maps/search/?api=1&query=${cuisine}&location=${userLocation.latitude},${userLocation.longitude}&radius=30000`
     );
   }
 

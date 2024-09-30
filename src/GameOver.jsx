@@ -1,4 +1,9 @@
 import './App.css';
+import PropTypes from 'prop-types';
+
+GameOver.propTypes = {
+  cuisineA: PropTypes.string.isRequired,
+};
 
 function GameOver({ cuisineA }) {
   return (
