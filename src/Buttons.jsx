@@ -80,9 +80,9 @@ function Buttons({
   }
 
   return (
-    <div className="display block">
+    <div className="display block p-5 align-middle">
       <div className="text-center">Round: {buttonSet}/13</div>
-      <div className="flex items-center gap-5 p-10">
+      <div className="flex items-center justify-center gap-5 p-5">
         <button
           data-remove={cuisineB}
           onClick={(e) => handleClick(e)}

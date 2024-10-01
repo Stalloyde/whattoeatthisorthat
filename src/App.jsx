@@ -11,7 +11,7 @@ const array = [
   'Italian',
   'Chinese',
   'Malay',
-  'Southern/Northern Indian',
+  'South/North Indian',
   'Thai',
   'Turkish',
   'Indonesian',
@@ -50,7 +50,7 @@ function App() {
       {gameOver ? (
         <GameOver cuisineA={cuisineA} />
       ) : (
-        <div className="flex">
+        <div className="p-5 md:flex md:items-center">
           <Description />
           <Buttons
             shuffleArray={shuffleArray}

@@ -8,7 +8,7 @@ GameOver.propTypes = {
 function GameOver({ cuisineA }) {
   return (
     <>
-      <div>
+      <div className="p-5">
         <div>
           <h1 className="header1">Winning Cuisine: {cuisineA}</h1>
         </div>
